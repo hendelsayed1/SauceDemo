@@ -15,7 +15,7 @@ test('User can register successfully', async ({ page }) => {
   await registerPage.submit();
 
   // Save generated user for later use
-  saveTestUser({ username: user.userID, password: user.password });
+  saveTestUser({ userID: user.userID, password: user.password });
 
   // Verify Success registeration and redirection to main page again
 
