@@ -78,19 +78,16 @@ npx playwright test --debug
 ## Test Structure
 
 ```
-├── tests/                  # Test files
-│   ├── registration.spec.ts  # Registration tests
-│   ├── login.spec.ts         # Login tests
-│   └── cart.spec.ts          # Cart and order placement tests
+├── tests/                                     # Test files
+│   ├── TC1_userRegistration.spec.ts           # Registration tests
+│   ├── TC2_userLogin.spec.ts                     # Login tests
+│   └── TC3_addToCartPlaceOrder.test.ts          # Cart and order placement tests
 ├── pages/                  # Page Object Models
-│   ├── BasePage.ts           # Base page with common methods
-│   ├── RegistrationPage.ts   # Registration page object
+│   ├── cartPage.ts.          # Base page with common methods
+│   ├── RegisterPage.ts   # Registration page object
 │   ├── LoginPage.ts          # Login page object
-│   ├── ProductPage.ts        # Product page object
-│   ├── CartPage.ts           # Cart page object
-│   └── CheckoutPage.ts       # Checkout page object
+│   ├── Order.ts        # Order page object
 ├── utils/                  # Utility functions and helpers
-├── fixtures/               # Test fixtures and data
 └── reports/                # Test reports
 ```
 
