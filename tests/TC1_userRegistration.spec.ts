@@ -21,6 +21,6 @@ test('User can register successfully', async ({ page }) => {
 
   await expect(page.locator('#LogoContent').getByRole('link')).toBeVisible();
   await expect(page.locator('#MenuContent').getByRole('link').first()).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Sign In' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Sign In' })).toBeVisible(); 
   
 });
