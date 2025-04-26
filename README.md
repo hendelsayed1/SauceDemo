@@ -99,5 +99,14 @@ After running the tests, you can view the HTML report by running:
 npx playwright show-report
 ```
 
+## Running Tests on GitHub Actions (CI/CD)
 
+This project uses GitHub Actions to automatically run tests on every push and pull request to main.
+
+- It installs dependencies
+- Installs Playwright browsers
+- Runs Playwright tests
+- Uploads a Playwright HTML report as an artifact
+
+You can view the status and report directly inside the Actions tab of your GitHub repository.
 
