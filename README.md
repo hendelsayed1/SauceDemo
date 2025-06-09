@@ -1,6 +1,6 @@
-# E-commerce Automation Testing Project
+# SauceDemo E-commerce Automation Testing Project
 
-This repository contains automated tests for an e-commerce application using Playwright with TypeScript. The tests cover user registration, login and add to cart with placing order workflows.
+This repository contains automated tests for an e-commerce application using Playwright with TypeScript. The tests cover user login and add to cart with placing order flow.
 
 ## Features
 
@@ -22,8 +22,8 @@ Before running the tests, make sure you have the following installed:
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/hendelsayed1/Automation-Task.git
-   cd Automation-Task/tests/
+   git clone https://github.com/hendelsayed1/SauceDemo.git
+   cd SauceDemo/tests/
    ```
 
 2. Install the dependencies:
@@ -50,9 +50,7 @@ npm test
 ### Run specific test files
 
 ```bash
-npx playwright test TC1_userRegistration.spec.ts
-npx playwright test TC2_userLogin.spec.ts
-npx playwright test TC3_addToCartPlaceOrder.test.ts
+npx playwright test tests/place-order.spec.ts
 ```
 
 ### Run tests in headed mode (to see the browser)
@@ -78,17 +76,24 @@ npx playwright test --debug
 ## Test Structure
 
 ```
-├── tests/                                     # Test files
-│   ├── TC1_userRegistration.spec.ts           # Registration tests
-│   ├── TC2_userLogin.spec.ts                     # Login tests
-│   └── TC3_addToCartPlaceOrder.test.ts          # Cart and order placement tests
-├── pages/                  # Page Object Models
-│   ├── cartPage.ts.          # Base page with common methods
-│   ├── RegisterPage.ts   # Registration page object
-│   ├── LoginPage.ts          # Login page object
-│   ├── Order.ts        # Order page object
-├── utils/                  # Utility functions and helpers
-└── reports/                # Test reports
+├── tests/                                         # Test files
+│   └── place-order.spec.ts                        # Full test: login, add to cart, checkout
+│
+├── pages/                                         # Page Object Models
+│   ├── LoginPage.ts                               # Login page
+│   ├── ProductPage.ts                             # Handles adding product & navigating to cart
+│   ├── CartPage.ts                                # Clicking 'Checkout'
+│   ├── CheckoutPage.ts                            # Filling user info and clicking 'Continue'
+│   └── ConfirmationPage.ts                        # Verifying "Thank you for your order!" message
+│
+├── utils/                                         # Helper data and utilities
+│   └── testData.ts                                # Contains valid user credentials
+│
+├── playwright.config.ts                           # Playwright config with all browser projects
+├── package.json                                   # NPM dependencies and scripts
+├── tsconfig.json                                  # TypeScript config
+└── playwright-report/                             # Auto-generated HTML test reports
+
 ```
 
 ## Test Reports
